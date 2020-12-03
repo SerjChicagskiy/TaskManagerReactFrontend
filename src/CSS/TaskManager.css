@@ -1,0 +1,12 @@
+#tableTask {
+    position: absolute;
+	top: 0px;
+	left: 50%;
+    transform: translateX(-50%);
+	margin: auto;
+    border: 1px solid black;
+    color: white;
+	min-height: 250px;
+	padding: 20px;
+	z-index: 2;
+}
