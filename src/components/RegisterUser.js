@@ -12,8 +12,7 @@ class RegisterUser extends React.Component{
             name:'',
             lastname:'',
             email:'',
-            birthday:'',
-            photo:'',
+            birthday:new Date(),
             photopath:'',
             login:'',
             password:''
@@ -33,6 +32,17 @@ class RegisterUser extends React.Component{
     }
 
     render() {
+      var today=new Date()
+      var dd = today.getDate()
+      var mm = today.getMonth()+1
+      var yyyy = today.getFullYear()
+      if(dd<10){
+              dd='0'+dd
+          } 
+          if(mm<10){
+              mm='0'+mm
+          } 
+      today=`${yyyy}-${mm}-${dd}`
         return (
             <>
                 <div className="container">
@@ -60,12 +70,22 @@ class RegisterUser extends React.Component{
                                 value={this.state.email} 
                                 className="form-control"
                                 onChange={this.handleChange}/>
-                        <input  type="text" 
-                                name="birthday" 
-                                placeholder="Birthday" 
-                                value={this.state.birthday} 
-                                className="form-control"
-                                onChange={this.handleChange}/>
+                        <div   
+                                className="form-control" style={{
+                                borderRadius: 0,
+                                background: 'rgb(98, 96, 96)',
+                                border: 0,
+                                display:'flex',
+                                color:'darkgray',
+                                justifyContent:'space-between',
+                                fontFamily: 'Nunito, sans-serif'}}>Birthday:
+                                <input
+                                      name="birthday" 
+                                      type="date"
+                                      max={today}
+                                      value={this.state.birthday}
+                                      onChange={this.handleChange}></input>
+                        </div>
                         <input  type="text" 
                                 name="phone" 
                                 placeholder="Phone" 
@@ -105,4 +125,4 @@ const mapDispatchToProps = dispatch => ({
     userPostFetch: userInfo => dispatch(userPostFetch(userInfo))
   })
   
-  export default connect(null, mapDispatchToProps)(RegisterUser);
+export default connect(null, mapDispatchToProps)(RegisterUser);

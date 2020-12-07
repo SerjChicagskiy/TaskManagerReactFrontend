@@ -20,6 +20,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router history={history}>
+        <Redirect from="/" to="/login"/>
         <Route exact path="/login" component={Login}></Route>
         <Route exact path="/register" component={RegisterUser}/>
         <Route exact path="/task" component={TaskManagerStore}/>

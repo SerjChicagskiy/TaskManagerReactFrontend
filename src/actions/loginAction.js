@@ -1,4 +1,3 @@
-
 import history from '../creators/creatorsHisrory';
 
 export const userLoginFetch = user => {
@@ -16,10 +15,10 @@ export const userLoginFetch = user => {
         }).then(resp => resp.json())
         .then(data => {
           if (data.message) {
-            
+            console.log(data.message)
           } else {
             localStorage.setItem("token", data.token)
-            dispatch(loginUser(data.login)) 
+            dispatch(loginUser(data)) 
             history.push('/task')
           }
         })
@@ -34,15 +33,24 @@ export const userPostFetch = user => {
           'Content-Type': 'application/json',
           Accept: 'application/json'
         },
-        body: JSON.stringify({user})
+        body: JSON.stringify({
+          name:user.name,
+          lastname:user.lastname,
+          photopath:user.photopath,
+          birthday:user.birthday,
+          email:user.email,
+          phone:user.phone,
+          login:user.login,
+          password:user.password
+        })
       })
         .then(resp => resp.json())
         .then(data => {
           if (data.message) {
-            //Тут прописываем логику
+            console.log("mes--------"+data.message)
           } else {
-            localStorage.setItem("token", data.jwt)
-            dispatch(loginUser(data.user))
+            dispatch(loginUser(user))
+            history.push('/login')
           }
         })
     }

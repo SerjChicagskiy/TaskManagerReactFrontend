@@ -53,7 +53,7 @@ class Login extends React.Component{
                         <label className="text-info">Remember me <input name="rememberMe" type="checkbox" onChange={this.handleChange} checked={this.state.rememberMe}/></label>
                       </div>
                       <div>
-                          <Link to="/task" className="text-info">Register here</Link>
+                          <Link to="/register" className="text-info">Register here</Link>
                       </div>
                     </div>
                   <button type="submit" className="btn btn-default btn-block btn-custom">Login</button>

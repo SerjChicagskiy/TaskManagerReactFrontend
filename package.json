@@ -9,6 +9,8 @@
     "jquery": "^3.5.1",
     "react": "^17.0.1",
     "react-bootstrap-table": "^4.3.1",
+    "react-date-picker-cs": "^0.1.28",
+    "react-datepicker": "^3.3.0",
     "react-dom": "^17.0.1",
     "react-particles-js": "^3.4.1",
     "react-redux": "^7.2.2",

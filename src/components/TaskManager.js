@@ -55,7 +55,6 @@ class TaskManagerStore extends React.Component {
         })
             .then(resp => resp.json())
                 .then(res => this.setState({data:res}))
-        console.log(localStorage.token)
     }
   
     render() {
