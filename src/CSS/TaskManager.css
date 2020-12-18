@@ -1,7 +1,7 @@
 #tableTask {
     position: absolute;
 	top: 0px;
-	left: 50%;
+	left: 50%; 
     transform: translateX(-50%);
 	margin: auto;
     border: 1px solid black;
@@ -9,4 +9,10 @@
 	min-height: 250px;
 	padding: 20px;
 	z-index: 2;
+	
 }
+
+#btnNav:hover{
+		background-color: rgba(90, 2, 2, 0.712)
+}
+
